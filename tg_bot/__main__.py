@@ -36,11 +36,7 @@ Main commands available:
 And the following:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll of the following commands  / or ! can  be used...\n")
 
-DONATE_STRING = """Heya, glad to hear you want to donate!
-It took lots of work for [my creator](t.me/SonOfLars) to get me to where I am now, and every donation helps \
-motivate him to make me even better. All the donation money will go to a better VPS to host me, and/or beer \
-(see his bio!). He's just a poor student, so every little helps!
-There are two ways of paying him; [PayPal](paypal.me/PaulSonOfLars), or [Monzo](monzo.me/paulnionvestergaardlarsen)."""
+DONATE_STRING = """We don't need any donations currently"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -129,7 +125,9 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_text(
-                PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
+                PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),reply_markup=InlineKeyboardMarkup(
+                                                [[InlineKeyboardButton(text="Help",url="t.me/{}?start=help".format(bot.username)),InlineKeyboardButton(text=" Group",url="https://telegram.dog/cinemagalaxychat")]  
+                                               ]),
                 parse_mode=ParseMode.MARKDOWN)
     else:
         update.effective_message.reply_text("waked up😏😏😏")
