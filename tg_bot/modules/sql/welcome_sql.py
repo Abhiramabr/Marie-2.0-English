@@ -5,7 +5,25 @@ from sqlalchemy import Column, String, Boolean, UnicodeText, Integer, BigInteger
 from tg_bot.modules.helper_funcs.msg_types import Types
 from tg_bot.modules.sql import SESSION, BASE
 
-DEFAULT_WELCOME = "Hey {first}, Welcome to Cinema Galaxy🎥"
+DEFAULT_WELCOME = """Hai *{first}😍.*How are you , Welcome to {chatname}
+
+📰 *{first}* Details :
+
+*Name :* {fullname}
+*User Name :* {username}
+*Telegram ID :* {id}
+*Here you are :* {count} th member
+
+Groupil നമ്മുക്കു കൊറച്ച് കൊച്ചുവർത്തമാനമൊക്കെ പറഞ്ഞ് ഇരിയ്ക്കാം
+
+Movie request ചെയുന്നതിന് മുനമ്പ് @cinimagalaxy channel ചെന്ന് private channel ലുകളിൽ ഒക്കെ ഒന്ന് join അല്ലെങ്കിൽ ചോദിച്ച പടം കിട്ടില്ല (വേറെയോന്നും തോന്നരുത് ട്ടോ😜)
+
+
+സിനിമകൾ റിക്വസ്റ്റ് ചെയ്യുന്നതിന് മുമ്പ് നിങ്ങൾ താഴെ കാണുന്ന ചാനലുകളിൽ ജോയിൻ ആയിട്ടുണ്ടോ എന്ന്‌ ഉറപ്പു വരുത്തുക. ജോയിൻ ചെയ്താലേ മിക്ക സിനിമകളിലേക്കുമുള്ള അക്‌സസ് ലഭിക്കുകയൊള്ളു..!
+
+Before requesting movies, make sure you have joined the channels below. Only by joining can you get access to most of the movies ..!
+
+[Channel list](buttonurl:@cinimagalaxy)[Rules](buttonurl:https://telegra.ph/Rules-Of-CG-01-28)"""
 DEFAULT_GOODBYE = "Nice knowing ya!"
 
 
